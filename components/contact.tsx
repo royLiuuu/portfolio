@@ -21,7 +21,7 @@ interface ContactFormValues {
 }
 
 const saveContactMessage = async (data: ContactFormValues) => {
-  const { error } = await supabase.from('contact_messages').insert([data])
+  const { error } = await supabase.from('contact_message').insert([data])
   if (error) throw error
 }
 
