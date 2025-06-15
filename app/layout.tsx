@@ -13,7 +13,10 @@ const queryClient = new QueryClient()
 export const metadata = {
   title: "Roy Liu - Software Engineer",
   description: "Professional portfolio of Roy Liu, Software Engineer",
-    generator: 'v0.dev'
+    generator: 'v0.dev',
+    icons: {
+      icon: '/logo.png',
+    },
 }
 
 export default function RootLayout({
