@@ -57,6 +57,7 @@ export default function Contact() {
       email: formData.get('email') as string,
       subject: formData.get('subject') as string,
       message: formData.get('message') as string,
+      source: 'portfolio'
     }
 
     await mutation.mutateAsync(values)
