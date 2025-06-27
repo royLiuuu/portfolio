@@ -18,10 +18,11 @@ interface ContactFormValues {
   email: string
   subject: string
   message: string
+  source: 'portfolio'
 }
 
 const saveContactMessage = async (data: ContactFormValues) => {
-  const { error } = await supabase.from('contact_message').insert([data])
+  const { error } = await supabase.from('contact_message').insert([{...data, source: 'portfolio'}])
   if (error) throw error
 }
 
