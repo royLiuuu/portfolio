@@ -5,11 +5,13 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "@/components/ui/toaster"
 import QueryClientProviderWrapper from "@/components/query-client-provider"
 import Head from "next/head"
+import { siteDetails } from "@/lib/siteDetails"
+import { GoogleAnalytics } from "@next/third-parties/google"
 const inter = Inter({ subsets: ["latin"] })
 
 
 export const metadata = {
-  title: "Roy Liu - Software Engineer",
+  title: "royco | Roy Liu - Software Engineer",
   description: "Professional portfolio of Roy Liu, Software Engineer specializing in Full Stack Development and Java Backend",
   keywords: ["Roy-Co","Roy Liu","Yi Liu", "Full Stack Engineer", "Java Backend", "Portfolio", "Sydney Developer"],
   generator: 'v0.dev',
@@ -64,6 +66,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <body className={inter.className}>
+      <GoogleAnalytics gaId={siteDetails.googleAnalyticsId} />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <QueryClientProviderWrapper>
             {children}
